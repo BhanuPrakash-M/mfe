@@ -8,6 +8,7 @@ export default () => {
 
     useEffect(() => { 
         const { onParentNavigate } = mount(ref.current, {
+            initialPath: history.location.pathname,
             onNavigate: (location) => {
                 const { currPathname } = history.location;
                 currPathname !== location?.pathname && history.push(location?.pathname)
